@@ -1,0 +1,5 @@
+node_modules/
+environments/Local.bru
+.env
+*.key
+*.report.json

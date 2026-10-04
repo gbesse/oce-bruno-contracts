@@ -1,0 +1,24 @@
+meta {
+  name: Runtime / Exécution / Ejecución
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/namespaces/{{allowedNamespace}}/agents/{{allowedAgent}}/deployments/{{deploymentId}}/runtime
+  body: none
+  auth: none
+}
+
+headers {
+  x-api-key: {{adminKey}}
+  accept: application/json
+}
+
+tests {
+  test('OCC contract / Contrat OCC / Contrato OCC', function () {
+    expect(res.getStatus()).to.equal(200);
+    const body = res.getBody();
+    expect(body.data.revisionId).to.be.a('string'); expect(body.data.pods).to.be.an('array').that.is.not.empty; expect(body.data.pods.every(pod => pod.ready === true)).to.equal(true);
+  });
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Namespace / Namespace / Espacio de nombres
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/namespaces/{{allowedNamespace}}
+  body: none
+  auth: none
+}
+
+headers {
+  x-api-key: {{adminKey}}
+  accept: application/json
+}
+
+tests {
+  test('OCC contract / Contrat OCC / Contrato OCC', function () {
+    expect(res.getStatus()).to.equal(200);
+    const body = res.getBody();
+    expect(body.data.id).to.equal(bru.getEnvVar('allowedNamespace')); expect(body.data.status).to.equal('ready');
+  });
+}

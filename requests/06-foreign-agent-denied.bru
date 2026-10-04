@@ -1,0 +1,23 @@
+meta {
+  name: Foreign agent denied / Agent étranger refusé / Agente ajeno denegado
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/namespaces/{{foreignNamespace}}/agents/{{foreignAgent}}
+  body: none
+  auth: none
+}
+
+headers {
+  x-api-key: {{restrictedKey}}
+  accept: application/json
+}
+
+tests {
+  test('OCC contract / Contrat OCC / Contrato OCC', function () {
+    expect([403,404]).to.include(res.getStatus());
+    
+  });
+}

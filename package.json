@@ -1,0 +1,12 @@
+{
+  "name": "oce-bruno-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": { "@usebruno/cli": "4.2.0" }
+}

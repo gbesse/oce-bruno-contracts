@@ -1,0 +1,24 @@
+meta {
+  name: Deployment / Déploiement / Despliegue
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/namespaces/{{allowedNamespace}}/agents/{{allowedAgent}}/deployments/{{deploymentId}}
+  body: none
+  auth: none
+}
+
+headers {
+  x-api-key: {{adminKey}}
+  accept: application/json
+}
+
+tests {
+  test('OCC contract / Contrat OCC / Contrato OCC', function () {
+    expect(res.getStatus()).to.equal(200);
+    const body = res.getBody();
+    expect(body.data.deploymentId).to.equal(bru.getEnvVar('deploymentId')); expect(body.data.status).to.equal('succeeded'); expect(body.data.warnings).to.have.length(0);
+  });
+}

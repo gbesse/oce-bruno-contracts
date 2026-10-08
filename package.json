@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "generate": "node scripts/generate.mjs",
+    "preview": "node scripts/preview.mjs",
     "test": "node --test test/*.test.mjs"
   },
   "devDependencies": { "@usebruno/cli": "4.2.0" }

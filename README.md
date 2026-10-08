@@ -27,3 +27,11 @@ Colección [Bruno](https://www.usebruno.com/) de nueve peticiones **de solo lect
 Copia `environments/Example.bru` a `environments/Local.bru` (ignorado por Git), sustituye la URL y los identificadores y añade `adminKey` y `restrictedKey` como secretos Bruno. La clave de administración debe ver ambos agentes; la restringida solo el permitido. Mantén `Local.bru` privado con permisos `600` si guardas claves allí. Ejecuta el comando anterior desde la raíz de la colección.
 
 `npm ci && npm test` ejecuta la colección contra un servidor local simulado, incluido un caso de fuga entre espacios de nombres que debe hacer fallar Bruno. `npm run generate` reconstruye los archivos `.bru` a partir de `routes.json`. La CI pública no accede a instalaciones OCE ni a claves reales. Licencia MIT.
+
+## October 2026 improvement · Amélioration d’octobre 2026 · Mejora de octubre de 2026
+
+Run `npm run preview` to inspect all nine read-only routes and expected HTTP statuses without credentials or OCE network access.
+
+Exécutez `npm run preview` pour examiner les neuf routes en lecture seule et leurs codes HTTP attendus, sans identifiants ni accès réseau OCE.
+
+Ejecute `npm run preview` para revisar las nueve rutas de solo lectura y sus estados HTTP esperados, sin credenciales ni acceso de red a OCE.
